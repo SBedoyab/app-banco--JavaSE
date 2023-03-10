@@ -3,9 +3,9 @@ package model;
 public class Transaccion {
     private CuentaBancaria cuentaOrigen;
     private CuentaBancaria cuentaDestino;
-    private double monto;
+    private float monto;
 
-    public Transaccion(CuentaBancaria cuentaOrigen, CuentaBancaria cuentaDestino, double monto) {
+    public Transaccion(CuentaBancaria cuentaOrigen, CuentaBancaria cuentaDestino, float monto) {
         this.cuentaOrigen = cuentaOrigen;
         this.cuentaDestino = cuentaDestino;
         this.monto = monto;
@@ -31,13 +31,14 @@ public class Transaccion {
         return monto;
     }
 
-    public void setMonto(double monto) {
+    public void setMonto(float monto) {
         this.monto = monto;
     }
 
     public void ejecutarTransaccion(){
         if (cuentaOrigen.getSaldo()>=monto){
-
+            cuentaOrigen.Retirar(monto);
+            cuentaOrigen.Depositar(monto);
         }
     }
 }

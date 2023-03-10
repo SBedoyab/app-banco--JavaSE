@@ -5,6 +5,7 @@ public class CuentaBancaria {
     private int nCuenta;
     private float saldo;
 
+
     public CuentaBancaria(Cliente cliente, int nCuenta, float saldo) {
         this.cliente = cliente;
         this.nCuenta = nCuenta;
@@ -39,7 +40,7 @@ public class CuentaBancaria {
         saldo+=monto;
     }
 
-    public void Retirar(int retiro){
+    public void Retirar(float retiro){
         if (saldo>=retiro){
             saldo-=retiro;
         }else System.out.println("No existe el saldo suficiente.");

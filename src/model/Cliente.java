@@ -44,4 +44,12 @@ public class Cliente {
     public void setCuentaBancaria(CuentaBancaria cuentaBancaria) {
         this.cuentaBancaria = cuentaBancaria;
     }
+
+    public void procesarTransaccion(Transaccion transaccion){
+        transaccion.ejecutarTransaccion();
+    }
+    public void consultarSaldo(){
+
+    }
+
 }
