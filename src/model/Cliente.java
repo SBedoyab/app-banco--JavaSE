@@ -48,8 +48,8 @@ public class Cliente {
     public void procesarTransaccion(Transaccion transaccion){
         transaccion.ejecutarTransaccion();
     }
-    public void consultarSaldo(){
-
+    public void consultarSaldo(Transaccion transaccion){
+        transaccion.getMonto();
     }
 
 }

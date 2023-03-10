@@ -39,6 +39,6 @@ public class Transaccion {
         if (cuentaOrigen.getSaldo()>=monto){
             cuentaOrigen.Retirar(monto);
             cuentaOrigen.Depositar(monto);
-        }
+        }else System.out.println("No existe el saldo suficiente.");
     }
 }
