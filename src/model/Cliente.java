@@ -1,6 +1,9 @@
 package model;
 
+import java.util.Scanner;
+
 public class Cliente {
+    Scanner in=new Scanner(System.in);
     //Atributos
     private String nombre;
     private String ocupacion;
