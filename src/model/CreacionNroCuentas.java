@@ -1,16 +1,12 @@
 package model;
 
-import javax.swing.*;
 import java.util.Random;
 
 public class CreacionNroCuentas {
     Random rnd=new Random();
     private int n;
     private int[] nroCuentas=new int[n];
-
-    public CreacionNroCuentas(int[] nroCuentas) {
-        this.nroCuentas = nroCuentas;
-    }
+    int aux;
 
     public int[] getNroCuentas() {
         return nroCuentas;
@@ -20,21 +16,27 @@ public class CreacionNroCuentas {
         this.nroCuentas = nroCuentas;
     }
 
-    public int nroCuenta(int[] nroCuentas){
-        int nroCuenta, cont;
+    public int nroCuenta(){
+        int nroCuenta;
+        boolean cont=false;
+
         do {
-            cont=0;
             nroCuenta=0;
-            nroCuenta=rnd.nextInt(99999999);
-            for (int i=0; i<n+1 ; i++){
+            nroCuenta=rnd.nextInt(999999);
+
+            for (int i=0; i<n ; i++){
                 if (nroCuenta==nroCuentas[i]){
-                    cont++;
+                    cont=true;
+                    break;
+                }else{
+                    nroCuentas[n-1]=nroCuenta;
+                    break;
                 }
             }
 
-        }while(cont != 0);
-        n++;
-        nroCuentas[n]=nroCuenta;
+        }while(cont == true);
+
+
 
         return nroCuenta;
     }
